@@ -24,7 +24,7 @@ app.use(middleware.logger);
 // });
 
 app.get('/about',  middleware.requireAuthentication, function(req, res){  //route level middleware place as second paran
-	res.send('This is the ABOUT page!');
+	res.send('ABOUT page!');
 });
 
 app.use(express.static(__dirname + '/public'));
