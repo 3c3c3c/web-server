@@ -1,18 +1,8 @@
 var express = require('express');
 var app = express();
 var PORT = 3090
+var middleware = require('./middleware.js');
 
-var middleware = {
-	requireAuthentication: function(req, res, next){ 
-		console.log('private log hit!');
-		next();
-	},
-	logger: function(req, res, next){
-		var date = new Date().toString();
-		console.log('Request' + ' ' + date + ' ' + req.method + ' ' + req.originalUrl);
-		next();
-	}
-};
 
 //application level middleware will fire for all and every page refresh
 //app.use(middleware.requireAuthentication); //note- must place this here up top of rest
